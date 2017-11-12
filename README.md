@@ -9,6 +9,8 @@ Babel and ESLint is also included with this build.
 
 Easy Heroku deployment with Heroku Postgres. [Example](http://pern.herokuapp.com/) with this repo.
 
+Inspired by [Article](https://daveceddia.com/create-react-app-express-production/).
+
 ## Getting Started
 
 ### Prerequisites
