@@ -3,11 +3,13 @@
 
 Basic Startup to get up and running with PERN Stack with no configuration using [create-react-app](https://github.com/facebookincubator/create-react-app). 
 
-Babel and ESLint is also included with this build.
+Babel and ESLint is also included with this build. 
 
 [Massive.js](https://dmfay.github.io/massive-js/) to query Postgres database.
 
-Easy Heroku deployment with Heroku Postgres.
+Easy Heroku deployment with Heroku Postgres. [Example](http://pern.herokuapp.com/) with this repo.
+
+Inspired by [Article](https://daveceddia.com/create-react-app-express-production/).
 
 ## Getting Started
 
