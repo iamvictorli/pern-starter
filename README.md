@@ -1,8 +1,13 @@
 # pern-starter
 (PERN) Postgres Express React/Redux/React-Router-DOM Node stack boilerplate
 
-Basic Startup to get up and running with PERN Stack with no configuration using [create-react-app](https://github.com/facebookincubator/create-react-app).
-This also makes Heroku deployment easy.
+Basic Startup to get up and running with PERN Stack with no configuration using [create-react-app](https://github.com/facebookincubator/create-react-app). 
+
+Babel and ESLint is also included with this build.
+
+[Massive.js](https://dmfay.github.io/massive-js/) to query Postgres database.
+
+Easy Heroku deployment.
 
 ## Getting Started
 
@@ -20,6 +25,49 @@ This also makes Heroku deployment easy.
 - Make sure the new database with tables is running.
 - Run `npm run dev` or `yarn run dev`.
 - Navigate to `localhost:3000` in your browser.
+
+## Folder Structure
+```
+pern-starter
+├── README.md
+├── node_modules
+├── package.json
+├── setup.sql
+├── Procfile
+├── .gitignore
+├── .eslintrc
+├── .babelrc
+├──  client   (React)
+|   ├── README.md
+|   ├── node_modules
+|   ├── package.json
+|   ├── .gitignore
+|   ├── public
+|   |   └── favicon.ico
+|   |   └── index.html
+|   |   └── manifest.json
+|   └── src
+|       ├── api.js
+|       ├── App.js
+|       ├── index.js
+|       ├── rootReducer.js
+|       ├── types.js
+|       ├── actions   (action creators)
+|       |   └── actions.js
+|       ├── components   (React components)
+|       |   └── components.js
+|       └── reducers   (Redux reducers)
+|           └── reducers.js
+|    
+└── server
+    ├── index.js
+    ├── models   (Queries to database with Massive.js)
+    |   ├── dbConnection.js
+    |   └── dbScripts
+    |       └── dbScripts.sql   (prepared statement SQL)
+    └── routes   (API routes)
+        └── routes.js
+```
 
 ## Available Scripts
 
