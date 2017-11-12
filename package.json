@@ -1,7 +1,7 @@
 {
   "name": "pern",
   "version": "1.0.0",
-  "description": "Postgres Express React Node stack",
+  "description": "Postgres Express React/Redux/React-Router-DOM Node stack boilerplate",
   "main": "server/index.js",
   "author": "Victor Li",
   "license": "MIT",
