@@ -7,8 +7,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   const db = req.app.get('db');
 
-  db
-    .getLibraries()
+  db.getLibraries()
     .then((libraries) => {
       res.status(200).json({ libraries });
     })
