@@ -1,1 +1,1 @@
-web: node -r dotenv/config -r babel-register dist/app.js
+web: node -r dotenv/config -r babel-register dist/index.js
