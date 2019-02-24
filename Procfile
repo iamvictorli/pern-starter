@@ -1,1 +1,1 @@
-web: node -r dotenv/config dist/index.js
+web: node dist/index.js

@@ -1,37 +1,19 @@
 {
-  "name": "pern",
-  "version": "1.0.0",
-  "description": "Postgres Express React/Redux/React-Router-DOM Node stack boilerplate",
-  "main": "server/index.js",
-  "author": "Victor Li",
-  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"],
   "scripts": {
-    "build": "yarn && cd client && yarn && cd..",
-    "prod": "npx babel server -d dist --copy-files && cd client && yarn build && cd .. && node -r dotenv/config dist/index.js",
-    "server": "nodemon --ignore client/ --exec npx babel-node -r node_modules/dotenv/config server/index.js",
-    "client": "cd client && yarn start",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "lint": "eslint server client/src",
+    "server": "cd packages/server && yarn start",
+    "client": "cd packages/client && yarn start",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "lint:server": "cd packages/server && yarn lint",
+    "lint:client": "cd packages/client && yarn lint",
+    "lint:all": "yarn lint:server && yarn lint:client",
+    "prod:server": "cd packages/server && yarn prod",
+    "prod:client": "cd packages/client && yarn build",
+    "production": "yarn prod:client && yarn prod:server",
     "heroku-postbuild": "npx babel server -d dist --copy-files && cd client && yarn && yarn run build"
   },
-  "dependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1",
-    "body-parser": "^1.18.3",
-    "cookie-parser": "^1.4.4",
-    "dotenv": "^6.2.0",
-    "express": "^4.16.4",
-    "massive": "^5.7.6"
-  },
   "devDependencies": {
-    "@babel/node": "^7.2.2",
-    "concurrently": "^4.1.0",
-    "eslint": "4.9.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-jsx-a11y": "6.0.2",
-    "eslint-plugin-react": "7.4.0",
-    "nodemon": "^1.18.10"
+    "concurrently": "^4.1.0"
   }
 }

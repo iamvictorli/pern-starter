@@ -12,17 +12,17 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, '../../client/build')));
 
 // routing
 app.use('/api/libraries', libraries);
 
 // displaying react files
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.join(__dirname, '../../client/build/index.html'));
 });
 
-dbConnection.then((db) => {
+dbConnection.then(db => {
   // set db instance to postgres database
   app.set('db', db);
 
