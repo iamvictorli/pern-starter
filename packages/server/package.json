@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec npx babel-node -r ../../node_modules/dotenv/config src/index.js",
-    "prod": "npx babel src -d dist --copy-files && node -r dotenv/config dist/index.js",
+    "build": "npx babel src -d dist --copy-files",
     "lint": "eslint src"
   },
   "dependencies": {

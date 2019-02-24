@@ -8,10 +8,10 @@
     "lint:server": "cd packages/server && yarn lint",
     "lint:client": "cd packages/client && yarn lint",
     "lint:all": "yarn lint:server && yarn lint:client",
-    "prod:server": "cd packages/server && yarn prod",
-    "prod:client": "cd packages/client && yarn build",
-    "production": "yarn prod:client && yarn prod:server",
-    "heroku-postbuild": "npx babel server -d dist --copy-files && cd client && yarn && yarn run build"
+    "build:server": "cd packages/server && yarn build",
+    "build:client": "cd packages/client && yarn build",
+    "prod:local": "yarn build:client && yarn build:server && cd packages/server && node -r dotenv/config dist/index.js",
+    "heroku-postbuild": "yarn build:client && yarn build:server"
   },
   "devDependencies": {
     "concurrently": "^4.1.0"
