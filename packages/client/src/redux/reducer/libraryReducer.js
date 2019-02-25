@@ -20,7 +20,7 @@ export const loadLibraries = payload => ({
 });
 
 // Side effects
-export const getLibraries = () => dispatch =>
-  api.libraries.getLibraries().then(libs => {
-    dispatch(loadLibraries(libs));
-  });
+export const getLibraries = () => async dispatch => {
+  const libs = await api.libraries.getLibraries();
+  dispatch(loadLibraries(libs));
+};

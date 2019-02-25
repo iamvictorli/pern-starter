@@ -10,12 +10,12 @@ class LibrariesPage extends React.Component {
     loading: true
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const { fetchLibraries } = this.props;
-    fetchLibraries().then(() => {
-      this.setState({
-        loading: false
-      });
+    await fetchLibraries();
+
+    this.setState({
+      loading: false
     });
   }
 
