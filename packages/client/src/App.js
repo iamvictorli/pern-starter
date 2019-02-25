@@ -7,10 +7,10 @@ import LibrariesPage from './page/LibrariesPage';
 
 const App = ({ location }) => (
   <div>
-    <Route location={location} path="/" exact component={HomePage} />
+    <Route location={location} path='/' exact component={HomePage} />
     <Route
       location={location}
-      path="/libraries"
+      path='/libraries'
       exact
       component={LibrariesPage}
     />

@@ -8,7 +8,8 @@
   "scripts": {
     "start": "nodemon --exec npx babel-node -r ../../node_modules/dotenv/config src/index.js",
     "build": "npx babel src -d dist --copy-files",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "format": "prettier --write 'src/**/*.js'"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
