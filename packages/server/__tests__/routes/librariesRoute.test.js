@@ -1,9 +1,20 @@
 import request from 'supertest';
-import app from '../../src/index';
+import express from 'express';
+import http from 'http';
+import librariesRoute from '../../src/routes/libraries';
 
 describe('Libraries Route', () => {
+  const app = express();
+  app.use('/api/libraries', librariesRoute);
+  const server = http.createServer(app);
+  server.listen(process.env.PORT);
+
+  afterEach(done => {
+    server.close(done);
+  });
+
   test('Responds with all the libraries', done => {
-    request(app)
+    request(server)
       .get('/api/libraries')
       .expect('Content-Type', /json/)
       .expect(200, {
