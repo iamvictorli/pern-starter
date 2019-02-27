@@ -1,11 +1,9 @@
 # pern-starter
-(PERN) Postgres Express React/Redux/React-Router-DOM Node stack boilerplate
+(PERN) Postgres Express React/Redux/React-Router-DOM Node stack boilerplate using yarn workspaces.
 
-Basic Startup to get up and running with PERN Stack with no configuration using [create-react-app](https://github.com/facebookincubator/create-react-app). 
+Basic Startup to get up and running with PERN Stack with no configuration using [create-react-app](https://github.com/facebookincubator/create-react-app).
 
-Babel and ESLint is also included with this build. 
-
-[Massive.js](https://dmfay.github.io/massive-js/) to query Postgres database.
+Babel, ESLint, Prettier, pg, Jest, Supertest, Enzyme is also included with this build.
 
 Easy Heroku deployment with Heroku Postgres. [Example](http://pern.herokuapp.com/) with this repo.
 
@@ -15,77 +13,100 @@ Inspired by [Article](https://daveceddia.com/create-react-app-express-production
 
 ### Prerequisites
 
+- [Yarn](https://yarnpkg.com/en/)
 - [NodeJS](https://nodejs.org)
 - [PostgreSQL](https://www.postgresql.org/)
 
 ### Steps
-- Run `npm run build` or `yarn run build`.
+- Run `yarn`.
 - Create a new database and run `setup.sql` to setup the tables needed.
-- In the root directory, create a .env file (or rename the env-sample file to .env) and place the following:
+- In the packages/server directory, create a .env file (or rename the env-sample file to .env) and place the following:
   - DATABASE_URL=*YOUR POSTGRES DATABASE URL*
-  - PORT=*PORT NUMBER FOR EXPRESS, EXCLUDING 3000*
+  - PORT=*5000*
+  - SSL=*true or false, if database supports SSL. Local Database does not support SSL*
 - Make sure the new database with tables is running.
-- Run `npm run dev` or `yarn run dev`.
+- Run `yarn dev`.
 - Navigate to `localhost:3000` in your browser.
 
 ## Folder Structure
 ```
 pern-starter
-├── README.md
 ├── node_modules
-├── package.json
-├── setup.sql
-├── Procfile
+├──  packages   (yarn workspaces)
+|   └── client   (React)
+|       ├── node_modules
+|       ├── public
+|       |   └── favicon.ico
+|       |   └── index.html
+|       |   └── manifest.json
+|       ├── src
+|       |   └── page   (Pages for application)
+|       |   |   └── __tests__
+|       |   |   |   └── page.test.js   (Testing Pages)
+|       |   |   └── page.js
+|       |   └── redux
+|       |   |   └── __tests__
+|       |   |   |   └── reducer.test.js   (Testing Reducers)
+|       |   |   └── reducer.js   (Reducers using Reducks Pattern https://github.com/erikras/ducks-modular-redux)
+|       |   |   └── configureStore.js   (Configure Store)
+|       |   └── App.js
+|       |   └── api.js
+|       |   └── index.js
+|       |   └── serviceWorker.js
+|       |   └── setupTests.js   (Enzyme Testing)
+|       ├── .eslintrc
+|       ├── .prettierrc
+|       ├── .README.md
+|       └── package.json
+|
+|   └── server
+|       ├── node_modules
+|       └── __tests__   (Testing Routes and Postgres Queries)
+|       └── src
+|       |   └── db   (Postgres Database Connection)
+|       |   |   └── index.js
+|       |   └── routes   (API Routes)
+|       |   |   └── routes.js
+|       |   └── index.js
+|       ├── .babelrc
+|       ├── .eslintrc
+|       ├── .prettierrc
+|       ├── env-sample
+|       └── package.json
+|
 ├── .gitignore
-├── .eslintrc
-├── .babelrc
-├──  client   (React)
-|   ├── README.md
-|   ├── node_modules
-|   ├── package.json
-|   ├── .gitignore
-|   ├── public
-|   |   └── favicon.ico
-|   |   └── index.html
-|   |   └── manifest.json
-|   └── src
-|       ├── api.js
-|       ├── App.js
-|       ├── index.js
-|       ├── rootReducer.js
-|       ├── types.js
-|       ├── actions   (action creators)
-|       |   └── actions.js
-|       ├── components   (React components)
-|       |   └── components.js
-|       └── reducers   (Redux reducers)
-|           └── reducers.js
-|    
-└── server
-    ├── index.js
-    ├── models   (Queries to database with Massive.js)
-    |   ├── dbConnection.js
-    |   └── dbScripts
-    |       └── dbScripts.sql   (prepared statement SQL)
-    └── routes   (API routes)
-        └── routes.js
+├── .travis.yml   (Travis CI)
+├── Procfile   (Heroku deployment)
+├── README.md
+├── package.json
+├── .renovate.json   (Renovate Bot)
+├── setup.sql
+└── yarn.lock
+
 ```
 
 ## Available Scripts
 
 In the project directory, the following commands are available:
 
-### `npm run dev` or `yarn run dev`
+### `yarn dev`
 
-Builds the app for development. It is watched by webpack for any changes in the front end (React) and back end (Express).
+Builds the app for development. It is watched by webpack for any changes in the front end (React) and back end (Express). Check out localhost:3000 on browser.
 
-### `npm run lint` or `yarn run lint`
+### `yarn format:all`
+Formats both front end (React) and back end (Express).
+
+### `yarn lint:all`
 
 Lints both front end (React) and back end (Express).
 
-### `npm run prod` or `yarn run prod`
+### `yarn test:all`
 
-Build and runs the full stack application for production. Both front end (React) and back end (Express) are minified and filenames include the hashes.
+Tests both front end (React) and back end (Express) in __tests__ folders.
+
+### `yarn prod:local`
+
+Build and runs the full stack application for production. Both front end (React) and back end (Express) are minified and filenames include the hashes. Check out localhost:5000 on browser.
 
 ## Heroku Deployment
 
@@ -114,11 +135,16 @@ In the dashboard of your project, there will either be a `Settings` tab or an `i
 - Third step, Deploy
 
 In the dashboard of your project, there will either be a `Deploy` tab or an `up arrow icon`, depending on your window size. Click on it, and choose your deployment method.
+
 ## Libraries
 - Express.js
-- Massive
+- pg
 - React using create-react-app
 - Redux
 - Redux Thunk
 - React Router Dom
-- Axios
+- ESLint
+- Babel
+- Jest
+- Supertest
+- Enzyme
