@@ -2,7 +2,7 @@ import request from 'supertest';
 import app from '../../src/index';
 
 describe('Libraries Route', () => {
-  test('Responds with all the libraries', async () => {
+  test('Responds with all the libraries', async done => {
     const response = await request(app)
       .get('/api/libraries')
       .expect('Content-Type', /json/)
@@ -21,5 +21,6 @@ describe('Libraries Route', () => {
         { id: 10, libraryname: 'Supertest' }
       ]
     });
+    done();
   });
 });
