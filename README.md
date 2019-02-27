@@ -102,7 +102,7 @@ Lints both front end (React) and back end (Express).
 
 ### `yarn test:all`
 
-Tests both front end (React) and back end (Express) in __tests__ folders.
+Tests both front end (React) and back end (Express) in `__tests__` folders.
 
 ### `yarn prod:local`
 
