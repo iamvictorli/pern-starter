@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage matches HomePage Snapshot 1`] = `
+Array [
+  <p>
+    Home page
+  </p>,
+  <a
+    href="/libraries"
+    onClick={[Function]}
+  >
+    Libraries page
+  </a>,
+]
+`;

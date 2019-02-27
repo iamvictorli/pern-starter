@@ -1,7 +1,7 @@
 import api from '../../api';
 
 // Actions
-const LOAD_LIBRARIES = 'LOAD_LIBRARIES';
+export const LOAD_LIBRARIES = 'LOAD_LIBRARIES';
 
 // Reducer
 export default function libraries(state = [], action) {

@@ -12,7 +12,9 @@ describe('Postgres Querying', () => {
       { id: 5, libraryname: 'Redux Thunk' },
       { id: 6, libraryname: 'React Router Dom' },
       { id: 7, libraryname: 'ESLint' },
-      { id: 8, libraryname: 'Babel' }
+      { id: 8, libraryname: 'Babel' },
+      { id: 9, libraryname: 'Jest' },
+      { id: 10, libraryname: 'Supertest' }
     ]);
     client.release();
     await db.pool.end();

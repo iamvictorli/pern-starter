@@ -1,3 +1,5 @@
+import 'cross-fetch'; // For testing for library reducer
+
 export default {
   libraries: {
     getLibraries: async () => {

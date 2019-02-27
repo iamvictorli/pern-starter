@@ -6,7 +6,7 @@ import HomePage from './page/HomePage';
 import LibrariesPage from './page/LibrariesPage';
 
 const App = ({ location }) => (
-  <div>
+  <React.Fragment>
     <Route location={location} path='/' exact component={HomePage} />
     <Route
       location={location}
@@ -14,7 +14,7 @@ const App = ({ location }) => (
       exact
       component={LibrariesPage}
     />
-  </div>
+  </React.Fragment>
 );
 
 App.propTypes = {

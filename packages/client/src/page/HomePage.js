@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => (
-  <div>
+  <React.Fragment>
     <p>Home page</p>
     <Link to='/libraries'>Libraries page</Link>
-  </div>
+  </React.Fragment>
 );
 
 export default HomePage;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import { getLibraries } from '../redux/reducer/libraryReducer';
 
-class LibrariesPage extends React.Component {
+export class LibrariesPage extends React.Component {
   state = {
     loading: true
   };
@@ -28,10 +28,10 @@ class LibrariesPage extends React.Component {
     ));
 
     return (
-      <div>
+      <React.Fragment>
         <h1>Libraries Used</h1>
         {loading ? <p>Loading...</p> : <ul>{libraryList}</ul>}
-      </div>
+      </React.Fragment>
     );
   }
 }
