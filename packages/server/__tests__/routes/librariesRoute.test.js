@@ -18,7 +18,8 @@ describe('Libraries Route', () => {
         { id: 7, libraryname: 'ESLint' },
         { id: 8, libraryname: 'Babel' },
         { id: 9, libraryname: 'Jest' },
-        { id: 10, libraryname: 'Supertest' }
+        { id: 10, libraryname: 'Supertest' },
+        { id: 11, libraryname: 'Enzyme' }
       ]
     });
     done();
