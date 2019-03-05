@@ -19,8 +19,8 @@
   "dependencies": {
     "cross-fetch": "3.0.1",
     "prop-types": "15.7.2",
-    "react": "16.8.3",
-    "react-dom": "16.8.3",
+    "react": "16.8.4",
+    "react-dom": "16.8.4",
     "react-redux": "6.0.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "2.1.5",
@@ -41,7 +41,7 @@
     "eslint-plugin-react": "7.12.4",
     "fetch-mock": "7.3.1",
     "prettier": "1.16.4",
-    "react-test-renderer": "16.8.3",
+    "react-test-renderer": "16.8.4",
     "redux-mock-store": "1.5.3"
   },
   "proxy": "http://localhost:5000"
