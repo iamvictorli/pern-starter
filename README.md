@@ -5,7 +5,7 @@ Basic Startup to get up and running with PERN Stack with no configuration using 
 
 Babel, ESLint, Prettier, pg, Jest, Supertest, Enzyme is also included with this build.
 
-Easy Heroku deployment with Heroku Postgres. [Example](http://pern.herokuapp.com/) with this repo.
+Easy Heroku deployment with Heroku Postgres. [Example](https://pern.herokuapp.com/) with this repo.
 
 Inspired by [Article](https://daveceddia.com/create-react-app-express-production/).
 
