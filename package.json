@@ -1,6 +1,7 @@
 {
   "private": true,
   "workspaces": ["packages/*"],
+  "license": "MIT",
   "scripts": {
     "server": "cd packages/server && yarn start",
     "client": "cd packages/client && yarn start",
