@@ -17,7 +17,7 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "cross-fetch": "3.0.1",
+    "cross-fetch": "3.0.2",
     "prop-types": "15.7.2",
     "react": "16.8.5",
     "react-dom": "16.8.5",
